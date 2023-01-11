@@ -28,7 +28,7 @@ Module 3 covers an introduction to front-end web application development using H
 
 ## 14-Week Syllabus
 
-The table below lists the Topics for each day as well as **the Sections and Units to be completed before each day's lecture**, including quizzes and tutorials if present.
+The table below lists the Topics for each day as well as **_the Sections and Units to be completed before each day's lecture, including quizzes and tutorials if present_**.
 
 <table>
     <tbody>
@@ -50,7 +50,7 @@ The table below lists the Topics for each day as well as **the Sections and Unit
         <tr>
             <td>Day 2</td>
             <td>Tech Setup & Introduction to Tools</td>
-            <td>Intro to Tools - Student guide<br/>Intro to Tools - How do I...?<br/>Intro to Tools - File system and command line<br/>Intro to Tools - Git<br/><a href="https://www.youtube.com/watch?v=FN2RM-CHkuI">The nature of computer programming - How to make a PB&J sandwich</a></td>
+            <td>Intro to Tools - Student guide<br/>Intro to Tools - How do I...?<br/>Intro to Tools - File system and command line<br/>Intro to Tools - Git<br/>Video: <a href="https://www.youtube.com/watch?v=FN2RM-CHkuI">The nature of computer programming - How to make a PB&J sandwich</a></td>
         </tr>
         <tr>
             <td>Day 3</td>
@@ -363,7 +363,6 @@ The table below lists the Topics for each day as well as **the Sections and Unit
         <tr>
             <td>Day 5</td>
             <td colspan=2>Review &amp; Final Capstone Prep</td>
-            <td></td>
         </tr>
         <!-- FINAL CAPSTONE -->
         <!-- Week 13 - 14 -->
