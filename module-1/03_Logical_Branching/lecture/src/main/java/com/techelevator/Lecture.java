@@ -44,8 +44,8 @@ public class Lecture {
     return true if the if statement passes.
     */
     public boolean returnTrueFromIf() {
-        if (true) {
-            return false;
+        if (false) {
+            return true;
         }
 
         return false;
@@ -57,7 +57,7 @@ public class Lecture {
     */
     public boolean returnTrueWhenOneEqualsOne() {
         if (1 == 1) {
-            return false;
+            return true;
         }
 
         return false;

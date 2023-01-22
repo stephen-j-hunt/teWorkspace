@@ -1,6 +1,8 @@
 package com.techelevator;
 
+
 public class Exercise01_TestGrading {
+    private static final int B = 'B';
 
     /*
     Grade-o-matic Incorporated has a program to grade student tests.
@@ -18,6 +20,9 @@ public class Exercise01_TestGrading {
     gradeTestPassFail(45) ➔ false
      */
     public boolean gradeTestPassFail(int score) {
+        if (score >= 70) {
+            return true;
+        }
         return false;
     }
 
@@ -37,7 +42,21 @@ public class Exercise01_TestGrading {
     gradeTestNumeric(10) ➔ 0
      */
     public int gradeTestNumeric(int score) {
-        return 0;
+        int a = 3;
+        int b = 2;
+        int c = 1;
+
+        if (score >= 90) {
+            return a;
+        }
+        if (score >= 50) {
+            return b;
+        }
+        if (score >= 25) {
+            return c;
+        } else {
+            return 0;
+        }
     }
 
     /*
@@ -56,6 +75,20 @@ public class Exercise01_TestGrading {
     gradeTestLetter(45) ➔ 'F'
      */
     public char gradeTestLetter(int score) {
-        return ' ';
+        if (score >= 90) {
+            return 'A';
+        }
+        if (score >= 80) {
+            return 'B';
+        }
+        if (score >= 70) {
+            return 'C';
+        }
+        if (score >= 60) {
+            return 'D';
+        } else {
+            return 'F';
+        }
     }
 }
+
