@@ -22,14 +22,14 @@ public class TempConvert {
             System.out.println(temperatureCelsius);
             //Logic for converting temperature into desired scale
         }
+        if (response.equalsIgnoreCase("f")) {
+            double temperatureFarenheit = (temperatureC * 1.8) + 32;
+            System.out.println(temperatureFarenheit);
 
 
+            //    double temperatureFarenheit = (temperatureC * 1.8) + 32;
 
-
-
-       double temperatureFarenheit = (temperatureC * 1.8) + 32;
-
-
+        }
     }
 
 }
