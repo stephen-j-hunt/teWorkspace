@@ -13,22 +13,16 @@ public class TempConvert {
         double temperatureF = Double.parseDouble(tempValue);
 
         System.out.println("Is the temperature in Celsius or Fahrenheit?");
-        //Create a new string to store user's desired scale
         String response = input.nextLine();
 
-        //Then compare String scale (using equalsIgnoredCase) to see which conversion formula to use
         if (response.equalsIgnoreCase("c")) {
-           double temperatureCelsius = (temperatureF - 32) / 1.8;
+            double temperatureCelsius = (temperatureF - 32) / 1.8;
             System.out.println(temperatureCelsius);
-            //Logic for converting temperature into desired scale
+
         }
         if (response.equalsIgnoreCase("f")) {
             double temperatureFarenheit = (temperatureC * 1.8) + 32;
             System.out.println(temperatureFarenheit);
-
-
-            //    double temperatureFarenheit = (temperatureC * 1.8) + 32;
-
         }
     }
 

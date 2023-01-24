@@ -10,8 +10,7 @@ public class KilometerConverter {
 
         //greet the user and prompt them to enter a start from, end with, and increment value
         System.out.print("Enter a kilometer value to start at: ");
-        String value = input.nextLine();
-        int kilometerStart = Integer.parseInt(value);
+        int value = Integer.parseInt(value);
 
         System.out.print("Enter a kilometer value to end with: ");
         value = input.nextLine();
