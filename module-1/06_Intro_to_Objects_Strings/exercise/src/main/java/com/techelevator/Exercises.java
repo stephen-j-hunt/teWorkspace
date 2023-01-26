@@ -254,7 +254,8 @@ return null;
      hasBad("xxbadxx") → false
      */
     public boolean hasBad(String str) {
-        return str.substring(0,1)+str.contains("bad") + str.equals("bad")
+        //return str.substring(0,1,) + str.contains("bad");
+    return true;
     }
 
     /*
@@ -350,7 +351,7 @@ return null;
      altPairs("CodingHorror") → "Congrr"
      */
     public String altPairs(String str) {
-        return str.substring(0,1) + str.charAt(4) + str.charAt(8);
+        return null;
     }
 
     /*
