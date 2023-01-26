@@ -16,7 +16,11 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		List<String> fruit = new ArrayList<String>();
+		for (int i = 0; i < stringArray.length; i++) {
+			fruit.add(stringArray[i]);
+		}
+			return fruit;
 	}
 
 	/*
