@@ -30,8 +30,7 @@ public class Auction {
 	}
 
 	public List<Bid> getAllBids() {
-		return new ArrayList<>(allBids);
-	}
+		return new ArrayList<>(allBids);}//passing a copy of a list of all the bids(encapsulation)
 
 	public String getItemForSale() {
 		return itemForSale;
