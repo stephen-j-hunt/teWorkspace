@@ -27,20 +27,18 @@ public class Card {
     public static final int KING = 13;
 
     // the state of my object
-    private int rank;
-    private int suite;
+    private Rank rank;
+    private Suite suite;
     private boolean faceDown = true;
 
-    public Card(int rank, int suite) {
+    public Card(Rank rank,Suite suite) {
         this.rank = rank;
         this.suite = suite;
         this.faceDown = false;
     }
 
-    public Card(int rank, int suite, boolean faceDown) {
+    public Card(Rank rank, Suite suite, boolean faceDown) {
         this(rank, suite);
-//        this.rank = rank;
-//        this.suite = suite;
         this.faceDown = faceDown;
     }
 
