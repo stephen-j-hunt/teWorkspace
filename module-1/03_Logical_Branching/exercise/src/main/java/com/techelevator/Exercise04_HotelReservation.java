@@ -48,23 +48,16 @@ public class Exercise04_HotelReservation {
     public double calculateStayTotal(int numOfTotalNights, boolean includesParking) {
 
         if (includesParking && numOfTotalNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE) {
-
             return ((DISCOUNT_RATE * numOfTotalNights) + (PARKING_RATE * numOfTotalNights));
         }
-
         if (includesParking) {
-
             return (DAILY_RATE * numOfTotalNights) + (PARKING_RATE * numOfTotalNights);
         }
-
         if (numOfTotalNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE) {
-
             return DISCOUNT_RATE * numOfTotalNights;
         } else {
-
             return DAILY_RATE * numOfTotalNights;
         }
-
     }
 
 

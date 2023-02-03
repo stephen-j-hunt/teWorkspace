@@ -36,6 +36,7 @@ package com.techelevator;
  */
 public class Crypto {
 
+
     /**
      * Encrypts and returns "strToEncrypt" using the substitution cypher above
      *
@@ -43,7 +44,12 @@ public class Crypto {
      * @return The encrypted String
      */
     public String encrypt(String strToEncrypt) {
-        return null;
+        String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        String[] newLetters = new String[]{"N", "J", "F", "Q", "A", "P", "S", "R", "X", "G", "D", "O", "T", "E", "U", "H", "M", "V", "B", "C", "W", "K", "Z", "I", "L", "Y"};
+        for (int i = 0; i < letters.length; i++) {
+            newLetters[i]=strToEncrypt;
+        }
+       return strToEncrypt;
     }
 
     /**
@@ -53,6 +59,10 @@ public class Crypto {
      * @return The decrypted String
      */
     public String decrypt(String strToDecrypt) {
+
+
+
+
         return null;
     }
 }
