@@ -8,18 +8,26 @@ import static org.junit.jupiter.api.Assertions.*;
 class FrontTimesTest {
 
     @Test
-public void ifStringIsThreeCopies() {
+    public void ifStringIsThreeCopies() {
         FrontTimes result = new FrontTimes();
-        assertEquals(result.generateString("Sox",3), "SoxSoxSox");
-}
+        assertEquals("SoxSoxSox", result.generateString("Sox", 3));
+    }
+
     @Test
     public void ifStringIsTwoCopies() {
         FrontTimes result = new FrontTimes();
-        assertEquals(result.generateString("Sox",2), "SoxSox");
+        assertEquals("SoxSox", result.generateString("Sox", 2));
     }
+
     @Test
     public void ifStringIsOneCopies() {
         FrontTimes result = new FrontTimes();
-        assertEquals(result.generateString("Sox",1), "Sox");
+        assertEquals("Sox", result.generateString("Sox", 1));
+    }
+
+    @Test
+    public void ifStringIsGreaterThanThree() {
+        FrontTimes result = new FrontTimes();
+        assertEquals("HelHelHelHel", result.generateString("Hello", 4));
     }
 }

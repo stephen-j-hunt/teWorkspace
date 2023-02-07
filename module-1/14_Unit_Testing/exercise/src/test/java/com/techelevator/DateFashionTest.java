@@ -13,7 +13,7 @@ class DateFashionTest {
         final int tableYes = 2;
         final int tableMaybe = 1;
         final int tableNo = 0;
-        Assert.assertEquals(2, style.getATable(8, 5));
+        Assert.assertEquals(tableYes, style.getATable(8, 5));
     }
 
     @Test
@@ -22,7 +22,7 @@ class DateFashionTest {
         final int tableYes = 2;
         final int tableMaybe = 1;
         final int tableNo = 0;
-        Assert.assertEquals(2, style.getATable(8, 8));
+        Assert.assertEquals(tableYes, style.getATable(8, 8));
     }
 
     @Test
@@ -31,7 +31,7 @@ class DateFashionTest {
         final int tableYes = 2;
         final int tableMaybe = 1;
         final int tableNo = 0;
-        Assert.assertEquals(1, style.getATable(3, 3));
+        Assert.assertEquals(tableMaybe, style.getATable(3, 3));
     }
     @Test
     public void bothPersonStyleIsUnderTwo() {
@@ -39,7 +39,7 @@ class DateFashionTest {
         final int tableYes = 2;
         final int tableMaybe = 1;
         final int tableNo = 0;
-        Assert.assertEquals(0, style.getATable(1, 1));
+        Assert.assertEquals(tableNo, style.getATable(1, 1));
     }
     @Test
     public void bothPersonStyleIsTwo() {
@@ -47,7 +47,7 @@ class DateFashionTest {
         final int tableYes = 2;
         final int tableMaybe = 1;
         final int tableNo = 0;
-        Assert.assertEquals(0, style.getATable(2, 2));
+        Assert.assertEquals(tableNo, style.getATable(2, 2));
     }
     @Test
     public void bothPersonStyleIsAboveEight() {
@@ -55,6 +55,6 @@ class DateFashionTest {
         final int tableYes = 2;
         final int tableMaybe = 1;
         final int tableNo = 0;
-        Assert.assertEquals(2, style.getATable(10, 10));
+        Assert.assertEquals(tableYes, style.getATable(10, 10));
     }
 }

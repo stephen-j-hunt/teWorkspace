@@ -13,29 +13,26 @@ class Lucky13Test {
     public void ifArrayHasNeitherInIt() {
         Lucky13 lucky = new Lucky13();
         final int[] result = {2, 5, 8};
-        lucky.getLucky(result);
-        assertTrue(true);
+        assertTrue(lucky.getLucky(result));
     }
 @Test
     public void ifArrayHasOneInIt() {
         Lucky13 lucky = new Lucky13();
         final int[] result = {1, 5, 8};
-        lucky.getLucky(result);
-        assertFalse(false);
+        assertFalse(lucky.getLucky(result));
     }
 @Test
     public void ifArrayHasThreeInIt() {
         Lucky13 lucky = new Lucky13();
         final int[] result = {3, 5, 8};
-        lucky.getLucky(result);
-        assertFalse(false);
+
+        assertFalse(lucky.getLucky(result));
     }
     @Test
     public void ifArrayHasOneAndThreeInIt() {
         Lucky13 lucky = new Lucky13();
         final int[] result = {1, 5, 3};
-        lucky.getLucky(result);
-        assertFalse(false);
+        assertFalse(lucky.getLucky(result));
     }
 
 }
