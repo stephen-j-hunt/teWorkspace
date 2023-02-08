@@ -1,5 +1,8 @@
 package com.techelevator.katas;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class DigitDivider {
 
     /**
@@ -14,7 +17,21 @@ public class DigitDivider {
      * @return the number of digits in num that evenly divide num
      */
     public int countDividers(int num) {
-        return -1;
+//Make a set so that only unique digits are saved.
+        Set<Integer> uniqueDigits = new HashSet<>();
+        int modNum = num;
+        while (modNum != 0) {
+            int digit = modNum % 10;
+            uniqueDigits.add(digit);
+            modNum /= 10;
+        }
+        //Counter for valid divisors
+        int validDivisorCount = 0;
+        //Iterate through each unique digit divisor and increment the validDivisorCount if can divide the num by the value
+        //without a remainder
+        for (Integer digit : uniqueDigits) {
+            if (num % digit == 0) validDivisorCount++;
+        }
+        return validDivisorCount;
     }
-
 }
