@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class QuizMaker {
@@ -14,8 +16,20 @@ public class QuizMaker {
 
 	public void run() {
 		/* Your code goes here */
+		try (userInput) {
+			System.out.println("What is the file your looking for?");
+			String fileName = userInput.nextLine();
+			File questionsFile = new File(fileName);
+
+			try (Scanner quizFile =new Scanner(questionsFile)) {
 
 
+
+			} catch (FileNotFoundException e) {
+				System.out.println("File not found");;
+			}
+
+
+		}
 	}
-
 }
