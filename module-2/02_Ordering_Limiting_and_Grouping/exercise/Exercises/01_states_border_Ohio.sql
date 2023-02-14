@@ -4,3 +4,8 @@
 -- Order the results alphabetically by state abbreviation and then by city name.
 -- (20 rows)
 
+SELECT population, city_name || ', ' || state_abbreviation AS name_and_state
+FROM city
+WHERE state_abbreviation IN ('PA', 'WV', 'KY', 'IN','MI')
+GROUP BY  city.state_abbreviation, city.city_name, population 
+ORDER BY state_abbreviation ASC, city_name ASC;
