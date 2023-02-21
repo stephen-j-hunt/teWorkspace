@@ -1,36 +1,43 @@
 package com.techelevator;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class FlowerOrder {
-    String boquetType;
-    int numberOfRoses;
-    double subtotal;
 
-    public FlowerOrder(String boquetType, int numberOfRoses) {
+    private String bouqetType;
+    private Integer numberOfRoses;
+
+        public String getBouqetType() {
+            return bouqetType;
+        }
+
+        public Integer getNumberOfRoses () {
+            return numberOfRoses;
+        }
+
+    public FlowerOrder(String bouqetType, Integer numberOfRoses) {
+        this.bouqetType = bouqetType;
+        this.numberOfRoses = numberOfRoses;
 
     }
 
-    public String getBoquetType() {
-        return boquetType;
+        public double getSubtotal () {
+            return 19.99 + (2.99*numberOfRoses);
+        }
+
+        public String toString () {
+            return "ORDER - " + bouqetType + " - " + numberOfRoses + " roses - " + getSubtotal();
+        }
+
+        public boolean sameDayDelivery (String zipCode){
+            double deliveryFee = 0.0;
+            if (zipCode)
+            return false;
+        }
+
+
     }
 
-    public int getNumberOfRoses() {
-        return numberOfRoses;
-    }
 
-    public double getSubtotal() {
-        return 19.99 + numberOfRoses;
-    }
-    public String toString() {
-        return "ORDER - " + boquetType + " - " + numberOfRoses + "roses - " + subtotal;
-    }
 
-    public boolean sameDayDelivery(String zipCode) {
-        double deliveryFee = 0.0;
-        if (zipCode.toString(""))
-    }
-}
 
 
 
