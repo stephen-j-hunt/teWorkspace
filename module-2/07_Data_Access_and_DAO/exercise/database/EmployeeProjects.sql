@@ -8,6 +8,16 @@ CREATE TABLE department (
 	CONSTRAINT PK_department PRIMARY KEY (department_id)
 );
 
+-- SELECT department_id, name 
+-- FROM department
+-- WHERE department_id = ?;
+
+-- SELECT department_id, name
+-- FROM department;
+
+
+
+
 CREATE TABLE employee (
 	employee_id serial,
 	department_id int,
