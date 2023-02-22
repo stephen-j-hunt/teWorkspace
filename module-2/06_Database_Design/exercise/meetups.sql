@@ -34,6 +34,7 @@ member_id INT NOT NULL
 CREATE TABLE events (
 event_id SERIAL NOT NULL PRIMARY KEY
 	, destination VARCHAR(50) NOT NULL
+	, description VARCHAR(500) NOT NULL
 	, date_time TIMESTAMP NOT NULL
 	, duration_minutes INTEGER NOT NULL
 	, group_id INT NOT NULL
@@ -53,7 +54,7 @@ member_id INT NOT NULL
 );
 
 ALTER TABLE events
-	ADD CONSTRAINT ck_duration_minutes CHECK (duration_minutes > 30);
+	ADD CONSTRAINT ck_duration_minutes CHECK (duration_minutes > 29);
 
 INSERT INTO members (member_name, email, phone_number, date_of_birth, reminder_emails)
 VALUES ('Tom Smith', 'tomsmith@gmail.com', '123-456-7890','1960-01-01', true),
@@ -64,7 +65,6 @@ VALUES ('Tom Smith', 'tomsmith@gmail.com', '123-456-7890','1960-01-01', true),
 		('Bobby Hawkins', 'bobbyhawkins@gmail.com', '123-456-5463','1989-01-01', false),
 		('Guy Short', 'guyshort@gmail.com', '123-546-7890','1987-01-01', true),
 		('Jay Dewald', 'jaydewald@gmail.com', '678-456-7890','1998-01-01', false);
-	-- SELECT * FROM members;
 	
 	INSERT INTO groups (group_name)
 	VALUES ('Celtics Group')
@@ -72,11 +72,11 @@ VALUES ('Tom Smith', 'tomsmith@gmail.com', '123-456-7890','1960-01-01', true),
 	, ('City Tour Group');
 
 
-INSERT INTO events (destination, date_time, duration_minutes, group_id)
-VALUES ('Disney World', '2020-01-01 10:30:00', 100, (SELECT group_id FROM groups where group_name = 'Amusement Park Group'))
-	, ('Cedar Point', '2020-06-01 08:00:00', 300, (SELECT group_id FROM groups where group_name = 'Amusement Park Group'))
-	, ('TD Garden', '2021-05-25 19:30:00', 150 , (SELECT group_id FROM groups where group_name = 'Celtics Group'))
-	, ('Chicago', '2023-10-15 17:00:00', 300 , (SELECT group_id FROM groups where group_name = 'City Tour Group'));
+INSERT INTO events (destination, description, date_time, duration_minutes, group_id)
+VALUES ('Disney World', 'Happiest place in the world', '2020-01-01 10:30:00', 300, (SELECT group_id FROM groups where group_name = 'Amusement Park Group'))
+	, ('Cedar Point', 'Best park roller coasters', '2020-06-01 08:00:00', 300, (SELECT group_id FROM groups where group_name = 'Amusement Park Group'))
+	, ('TD Garden', 'Best NBA team', '2021-05-25 19:30:00', 150 , (SELECT group_id FROM groups where group_name = 'Celtics Group'))
+	, ('Chicago', 'One of the best cities', '2023-10-15 17:00:00', 300 , (SELECT group_id FROM groups where group_name = 'City Tour Group'));
 	
 	
 	INSERT INTO member_group (member_id, group_id)
@@ -86,17 +86,17 @@ VALUES ('Disney World', '2020-01-01 10:30:00', 100, (SELECT group_id FROM groups
 				, ((SELECT member_id FROM members WHERE member_name = 'Guy Short'), (SELECT group_id FROM groups WHERE group_name = 'City Tour Group' ))
 				, ((SELECT member_id FROM members WHERE member_name = 'Manny Ramirez'), (SELECT group_id FROM groups WHERE group_name = 'Amusement Park Group' ))
 				, ((SELECT member_id FROM members WHERE member_name = 'Stephen Hunt'), (SELECT group_id FROM groups WHERE group_name = 'Amusement Park Group' ));
-	--SELECT * FROM members
+	
+	
 INSERT INTO event_attendees (member_id, event_id)
 VALUES ((SELECT member_id FROM members WHERE member_id = 1), (SELECT event_id from events WHERE event_id = 3))
 	  , ((SELECT member_id FROM members WHERE member_id = 3), (SELECT event_id from events WHERE event_id = 4))
 	  , ((SELECT member_id FROM members WHERE member_id = 5), (SELECT event_id from events WHERE event_id = 2));
-	--SELECT * FROM event_attendees
 	
 	
 
 	
 	
 	
--- ROLLBACK; 	
+ROLLBACK; 	
 COMMIT;	
