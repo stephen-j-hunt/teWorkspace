@@ -34,14 +34,14 @@ public class JdbcSaleDao implements SaleDao {
         return sale;
     }
 
-    private Sale mapRowToSale(SqlRowSet rowSet) {
+    private Sale mapRowToSale(SqlRowSet results) {
         Sale sale = new Sale();
         // Step Three: Copy returned values into an object
-        sale.setSaleId(rowSet.getInt("sale_id"));
-        sale.setTotal(rowSet.getBigDecimal("total"));
-        sale.setDelivery(rowSet.getBoolean("is_delivery"));
-        sale.setCustomerId(rowSet.getInt("customer_id"));
-        if (rowSet.wasNull()) {
+        sale.setSaleId(results.getInt("sale_id"));
+        sale.setTotal(results.getBigDecimal("total"));
+        sale.setDelivery(results.getBoolean("is_delivery"));
+        sale.setCustomerId(results.getInt("customer_id"));
+        if (results.wasNull()) {
             sale.setCustomerId(null);
         }
         return sale;
