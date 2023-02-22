@@ -83,16 +83,27 @@ public class JdbcParkDao implements ParkDao {
 
     @Override
     public void updatePark(Park park) {
-
+        final String sql = "UPDATE park\n" +
+                "\tSET park_name=?, date_established=?, area=?, has_camping=?\n" +
+                "WHERE park_id = ?;";
+        jdbcTemplate.update(sql,
+                park.getParkName(),
+                park.getDateEstablished(),
+                park.getArea(),
+                park.getHasCamping(),
+                park.getParkId());
     }
 
     @Override
     public void deletePark(int parkId) {
-
+        final String sql = "DELETE FROM park_state WHERE park_id = ?;\n" +
+                "DELETE FROM park WHERE park_id = ?;\n";
+        jdbcTemplate.update(sql, parkId, parkId);
     }
 
     @Override
     public void removeParkFromState(int parkId, String stateAbbreviation) {
-
+        final String sql = "DELETE FROM park_state WHERE park_id = ? AND state_abbreviation = ?;\n";
+        jdbcTemplate.update(sql, parkId, stateAbbreviation);
     }
 }
