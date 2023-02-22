@@ -98,5 +98,5 @@ VALUES ((SELECT member_id FROM members WHERE member_id = 1), (SELECT event_id fr
 	
 	
 	
-ROLLBACK; 	
+--ROLLBACK; 	
 COMMIT;	
