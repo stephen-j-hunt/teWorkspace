@@ -26,7 +26,7 @@ public class JdbcDepartmentDao implements DepartmentDao {
 				"WHERE department_id = ?;";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sql,id);
 		if (results.next()) {
-			department=getDepartment(id);
+			department=mapRowToDepartment(results);
 		}
 	return department;
 	}
@@ -44,7 +44,10 @@ public class JdbcDepartmentDao implements DepartmentDao {
 
 	@Override
 	public void updateDepartment(Department updatedDepartment) {
-
+		String sql = "UPDATE department\n" +
+				"\tSET name=?\n" +
+				"\tWHERE department_id=?;";
+		jdbcTemplate.update(sql, updatedDepartment.getName(), updatedDepartment.getId());
 	}
 
 	private Department mapRowToDepartment(SqlRowSet rowSet) {

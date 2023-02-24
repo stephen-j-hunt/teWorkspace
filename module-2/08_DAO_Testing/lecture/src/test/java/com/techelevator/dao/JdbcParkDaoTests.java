@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class JdbcParkDaoTests extends BaseDaoTests {
 
@@ -16,36 +17,44 @@ public class JdbcParkDaoTests extends BaseDaoTests {
     private static final Park PARK_3 =
             new Park(3, "Park 3", LocalDate.parse("2000-06-15"), 300, false);
 
-    private JdbcParkDao sut;
+    private JdbcParkDao dao;
 
     @Before
     public void setup() {
-        sut = new JdbcParkDao(dataSource);
+        dao = new JdbcParkDao(dataSource);
     }
 
     @Test
     public void getPark_returns_correct_park_for_id() {
-        Assert.fail();
+        Park park = dao.getPark(PARK_1.getParkId());
+        assertParksMatch(PARK_1,park);
     }
 
     @Test
     public void getPark_returns_null_when_id_not_found() {
-        Assert.fail();
+        Park park = dao.getPark(-1);
+        Assert.assertNull("no park should be returned");
     }
 
     @Test
     public void getParksByState_returns_all_parks_for_state() {
-        Assert.fail();
+        List<Park> parks= dao.getParksByState("AA");
+        Assert.assertEquals("there should be two parks",2,parks.size());
+        assertParksMatch(PARK_1, parks.get(0));
+        assertParksMatch(PARK_3, parks.get(1));
+
     }
 
     @Test
     public void getParksByState_returns_empty_list_for_abbreviation_not_in_db() {
-        Assert.fail();
+        List<Park> parks=dao.getParksByState("xx");
+        Assert.assertEquals("no parks should  be returned",0,parks.size());
     }
 
     @Test
     public void createPark_returns_park_with_id_and_expected_values() {
-        Assert.fail();
+        Park newPark=dao.createPark(testPark);
+        Integer newId= newPark.getParkId();
     }
 
     @Test

@@ -17,7 +17,7 @@ public interface ProjectDao {
 
 	/**
 	 * Get a list of all projects.
-	 * 
+	 *
 	 * @return all projects as Project objects in a List
 	 */
 	public List<Project> getAllProjects();
@@ -39,4 +39,7 @@ public interface ProjectDao {
 	public void deleteProject(int projectId);
 
 
+
+
 }
+
