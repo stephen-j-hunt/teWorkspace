@@ -42,6 +42,53 @@ class SignalProcessor {
 
 */
     public String processSignals(String operation, String input1, String input2) {
-        return null;
+        if (operation == null || operation.isEmpty()) {
+            throw new IllegalArgumentException("operation required");
+        }
+
+        if (input1 == null || input2 == null || input1.isEmpty() || input2.isEmpty()) {
+            throw new IllegalArgumentException("two signals are required");
+        }
+
+        if (input1.length() != input2.length()) {
+            throw new IllegalArgumentException("both signals must be of the same length");
+        }
+
+        final String op = operation.toLowerCase();
+        final StringBuilder sb = new StringBuilder();
+        for(int i=0; i < input1.length(); i++) {
+            final boolean op1 = decode(input1.charAt(i));
+            final boolean op2 = decode(input2.charAt(i));
+            boolean result = false;
+            if (op.endsWith("and")) {
+                result = op1 && op2;
+            } else if (op.endsWith("xor")) {
+                result = op1 ^ op2;
+            } else if (op.endsWith("or")) {
+                result = op1 || op2;
+            }
+
+            if (op.startsWith("n")) {
+                result = !result;
+            }
+
+            sb.append(encode(result));
+        }
+
+        return sb.toString();
+    }
+
+    private boolean decode(char c) {
+        if (c == '-') {
+            return true;
+        } else if (c == '_') {
+            return false;
+        } else {
+            throw new IllegalArgumentException("invalid signal value: " + c);
+        }
+    }
+
+    private char encode(boolean val) {
+        return val ? '-' : '_';
     }
 }
