@@ -1,7 +1,7 @@
 Bug 1
 -----
 Test that demonstrates problem:
-    public void getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project() {
+    public void getTimesheetsByEmployeeId_returns_list_of_all_timesheets_for_employee() {
 Expected output:
     assertTimesheetsMatch(TIMESHEET_1,timesheet.get(0));
     assertTimesheetsMatch(TIMESHEET_2, timesheet.get(1));
@@ -33,25 +33,23 @@ How did you fix this bug?
 Bug 3
 -----
 Test that demonstrates problem:
-    public void deleted_timesheet_cant_be_retrieved() {
-I cant figure this one out
+        public void updated_timesheet_has_expected_values_when_retrieved() {
 Expected output:
-
+  assertTimesheetsMatch(timesheetToUpdate, retrieved);
+-should update the timesheet we called for
 Actual output:
-
+billable returns false when it should be true
 How did you fix this bug?
-
+added "billable_hours =?" into the query and updated and added "updatedTimesheet.isBillable()," to the jdbc update statement
 
 Bug 4
 -----
 Test that demonstrates problem:
-    public void createTimesheet_returns_timesheet_with_id_and_expected_values() {
-        public void created_timesheet_has_expected_values_when_retrieved() {
         public void getBillableHours_returns_correct_total() {
-im confused between these 3, but i think its the billable hours 
 Expected output:
-
+        Assert.assertEquals("should return 1",0.0, getHours,0);
+- sets the billable hours for project_id 2 and employee_id 2 to 0.0 hours
 Actual output:
-
+-billable hours returns with 2.0 hours
 How did you fix this bug?
-
+added "billable = ?" to the query so it determines if hours worked were billable (true or false)

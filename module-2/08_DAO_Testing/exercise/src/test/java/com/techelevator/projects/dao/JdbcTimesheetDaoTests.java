@@ -83,28 +83,29 @@ public class JdbcTimesheetDaoTests extends BaseDaoTests {
     @Test
     public void updated_timesheet_has_expected_values_when_retrieved() {
         Timesheet timesheetToUpdate = dao.getTimesheet(1);
-        timesheetToUpdate.setEmployeeId(4);
-        timesheetToUpdate.setProjectId(4);
+        timesheetToUpdate.setEmployeeId(2);
+        timesheetToUpdate.setProjectId(2);
         timesheetToUpdate.setDateWorked(LocalDate.parse("2021-01-03"));
         timesheetToUpdate.setHoursWorked(2);
         timesheetToUpdate.setBillable(false);
         timesheetToUpdate.setDescription("Timesheet 5");
+        dao.updateTimesheet(timesheetToUpdate);
+        Timesheet retrieved = dao.getTimesheet(timesheetToUpdate.getTimesheetId());
+        assertTimesheetsMatch(timesheetToUpdate, retrieved);
 
     }
 
     @Test
     public void deleted_timesheet_cant_be_retrieved() {
-        dao.getTimesheet(1);
+        dao.deleteTimesheet(1);
         Timesheet retrievedTimesheet = dao.getTimesheet(1);
         Assert.assertNull(retrievedTimesheet);
-//        List<Timesheet> timesheets =dao.getTimesheetsByProjectId(1);
-//        Assert.assertEquals(0,timesheets.size());
     }
 
     @Test
     public void getBillableHours_returns_correct_total() {
         double getHours = dao.getBillableHours(2,2);
-        Assert.assertEquals("should return 1",2.0, getHours,0);
+        Assert.assertEquals("should return 2",2.0, getHours,0);
     }
 
     private void assertTimesheetsMatch(Timesheet expected, Timesheet actual) {
