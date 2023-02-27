@@ -1,7 +1,7 @@
 package com.techelevator.projects.dao;
 
-import com.techelevator.projects.model.Timesheet;
-
+//import com.techelevator.projects.model.Timesheet;
+import com.techelevator.projects.model.*;
 import java.util.List;
 
 public interface TimesheetDao {

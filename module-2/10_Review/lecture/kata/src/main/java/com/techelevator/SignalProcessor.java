@@ -44,4 +44,12 @@ class SignalProcessor {
     public String processSignals(String operation, String input1, String input2) {
         return null;
     }
+
+
+
+
+
+
+
+
 }

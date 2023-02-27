@@ -35,7 +35,7 @@ public class JdbcEmployeeDao implements EmployeeDao {
 		String sql = "SELECT employee_id, department_id, first_name, last_name, birth_date, hire_date\n" +
 				"\tFROM employee\n" +
 				"\tWHERE employee_id =?;";
-		SqlRowSet rowSet= jdbcTemplate.queryForRowSet(sql,firstNameSearch, lastNameSearch );
+		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, firstNameSearch, lastNameSearch);
 		while (rowSet.next()) {
 			names.add(mapRowToNames(rowSet));
 		}
@@ -48,7 +48,7 @@ public class JdbcEmployeeDao implements EmployeeDao {
 		String sql = "SELECT employee_id\n" +
 				"\tFROM project_employee\n" +
 				"\tWHERE project_id =?;";
-		SqlRowSet rowSet= jdbcTemplate.queryForRowSet(sql, projectId );
+		SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, projectId);
 		while (rowSet.next()) {
 			names.add(mapRowToNames(rowSet));
 		}
@@ -82,9 +82,8 @@ public class JdbcEmployeeDao implements EmployeeDao {
 
 	private Employee mapRowToNames(SqlRowSet rowSet) {
 		Employee employees = new Employee();
-		employees.setId(rowSet.getInt("employee_id"));
+		employees.(rowSet.getInt("employee_id"));
 		return employees;
 	}
-	}
-
+}
 

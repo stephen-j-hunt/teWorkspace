@@ -1,29 +1,40 @@
 Bug 1
 -----
 Test that demonstrates problem:
-
+    public void getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project() {
 Expected output:
-
+    assertTimesheetsMatch(TIMESHEET_1,timesheet.get(0));
+    assertTimesheetsMatch(TIMESHEET_2, timesheet.get(1));
+        -returns 2 timesheets
 Actual output:
-
+    assertTimesheetsMatch(TIMESHEET_1,timesheet.get(0));
+    assertTimesheetsMatch(TIMESHEET_2, timesheet.get(1));
+        -it only returns 1 timesheet
 How did you fix this bug?
-
+changed the if loop to a while loop so it iterates through all the timesheets
 
 Bug 2
 -----
 Test that demonstrates problem:
-
+    public void getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project() {
 Expected output:
-
+    assertTimesheetsMatch(TIMESHEET_1, timesheets.get(0));
+    assertTimesheetsMatch(TIMESHEET_2, timesheets.get(1));
+    assertTimesheetsMatch(TIMESHEET_3, timesheets.get(2));
+        -returns 3 timesheets with input of project_id
 Actual output:
-
+        -returns 2 timesheets with input of project_id
 How did you fix this bug?
-
+    -changed the "Where" in the query from "WHERE employee_id = ?"
+    to "WHERE project_id = ?"
+    -employee_id only returns 2 because there are only 2 employees
+    -now returns 3 because there is 1 timesheet for each project_id
 
 Bug 3
 -----
 Test that demonstrates problem:
-
+    public void deleted_timesheet_cant_be_retrieved() {
+I cant figure this one out
 Expected output:
 
 Actual output:
@@ -34,7 +45,10 @@ How did you fix this bug?
 Bug 4
 -----
 Test that demonstrates problem:
-
+    public void createTimesheet_returns_timesheet_with_id_and_expected_values() {
+        public void created_timesheet_has_expected_values_when_retrieved() {
+        public void getBillableHours_returns_correct_total() {
+im confused between these 3, but i think its the billable hours 
 Expected output:
 
 Actual output:
