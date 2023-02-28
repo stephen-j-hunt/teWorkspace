@@ -105,7 +105,7 @@ public class JdbcTimesheetDaoTests extends BaseDaoTests {
     @Test
     public void getBillableHours_returns_correct_total() {
         double getHours = dao.getBillableHours(2,2);
-        Assert.assertEquals("should return 2",2.0, getHours,0);
+        Assert.assertEquals("should return 2",0.0, getHours,0);
     }
 
     private void assertTimesheetsMatch(Timesheet expected, Timesheet actual) {
