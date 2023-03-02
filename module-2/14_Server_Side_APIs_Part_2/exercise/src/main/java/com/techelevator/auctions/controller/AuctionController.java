@@ -4,17 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.techelevator.auctions.dao.AuctionDao;
 import com.techelevator.auctions.model.Auction;
 import org.springframework.web.server.ResponseStatusException;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auctions")
@@ -49,10 +45,27 @@ public class AuctionController {
         }
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping( path = "", method = RequestMethod.POST)
-    public Auction create(@RequestBody Auction auction) {
+    public Auction create(@Valid @RequestBody Auction auction) {
         return dao.create(auction);
     }
+    @PutMapping(path = "/{id}")
+    public Auction updateAuction(@Valid @RequestBody Auction auction, @PathVariable int id) {
+        Auction updatedAuction = this.dao.update(auction, id);
+        if (updatedAuction == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "unknown auction");
+        }
+        return updatedAuction;
+    }
+@ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping(path = "/{id}")
+    public void deleteAuction(@PathVariable int id) {
+        Auction auction =this.dao.get(id);
+        if (auction == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "unknown auction id");
+        }
+        this.dao.delete(id);
 
-
+    }
 }
