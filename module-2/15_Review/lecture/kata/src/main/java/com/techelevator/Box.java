@@ -7,7 +7,6 @@ public class Box {
         this.length = length;
         this.name = name;
     }
-
     private int height;
     private int width;
     private int length;
@@ -28,6 +27,7 @@ public class Box {
     public String getName() {
         return name;
     }
+
 
     @Override
     public String toString() {
