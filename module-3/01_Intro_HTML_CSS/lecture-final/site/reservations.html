@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Bits & Bytes</h1>
+        Welcome to the Internet's best cafe
+        <nav>
+            <a href="index.html">back to menu</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>Reservation Form</h2>
+
+        <form action="api/Reservations" method="post">
+
+            <div>
+                <label for="guest-name">Guest name</label>
+                <input type="text" id="guest-name" name="guestname">
+            </div>
+
+            <div>
+                <label>
+                    Event Date
+                    <input type="datetime-local" name="date">
+                </label>
+            </div>
+            <div>
+                <label for="guest-count">Number of guests</label>
+                <input type="number" id="guest-count" name="count">
+            </div>
+            <div>
+                <label for="special">Special</label>
+                <input type="checkbox" name="" id="special" name="special">
+            </div>
+            <input type="submit" value="make my reservation">
+
+        </form>
+
+    </main>
+
+
+</body>
+
+</html>
