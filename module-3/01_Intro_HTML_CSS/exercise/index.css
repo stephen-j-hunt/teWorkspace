@@ -1,0 +1,70 @@
+* {
+    text-align:center ;
+}
+
+body {
+    color:white;
+   background-color: darkgreen;
+}
+h1 {
+    font-size:50px ;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:goldenrod;
+}
+h2 {
+    color: goldenrod;
+    font-size: 35px;
+    text-decoration: white;
+}
+h3 {
+    color: gray;
+    font-size: 28px;
+    font-family: initial;
+}
+
+h4 {
+    font-size: 18px;
+}
+h5 {
+    color:orangered;
+    font-size: 28px;
+}
+h6 {
+    font-size: 18px;
+     font-style: normal;
+     color: grey;
+}
+    
+        table, th, td {
+            border: 1px solid black;
+            float: inline-start;
+            width:500px;
+            text-align:center;
+            margin: 0 auto 0 auto;
+           }
+    
+img  {
+    float: initial;
+    width:400px;
+    align-content: right;
+    image-rendering: crisp-edges;
+    }
+    #quotes-section{
+        font-style: italic;
+        text-decoration: white;
+    }
+    links-section {
+        text-decoration: white;
+        width:500px;
+        text-align:center;
+    }
+    a {
+        color: white;
+        display: inline;
+         margin-right:8em ;
+         margin-left: 5em;
+    }
+
+    
+

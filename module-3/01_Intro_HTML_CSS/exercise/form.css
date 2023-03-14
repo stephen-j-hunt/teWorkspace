@@ -1,0 +1,48 @@
+  * {
+      text-align: center;
+  }
+ body { color:goldenrod;
+    font-weight: bolder;
+     background-color: white; 
+     background-image: url("https://scontent.fluk1-1.fna.fbcdn.net/v/t39.30808-6/313188674_10159551782839221_354756755791857199_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=e3f864&_nc_ohc=So6Wvq-zYPkAX_Pa8Zz&_nc_ht=scontent.fluk1-1.fna&oh=00_AfAx3QcnG07LLKRtMp-NvsobTHLsN0u2665cny82MUYHOQ&oe=6416B234"); 
+   min-height: 100%;
+min-width: 1024px;
+  
+/* Set up proportionate scaling */
+width: 100%;
+height: auto;
+  
+/* Set up positioning */
+position: fixed;
+top: 0;
+left: 0;
+}
+h1 {
+     text-align: center;
+    font-size: 50px;
+    color: black;
+    
+}
+h2 {
+    color: green;
+}
+label {
+    font-size: 20px;
+    
+}
+button {
+    
+        position: center;
+        display: in inline-block;
+        width: 200px;
+        height: 36px;
+        border-radius: 18px;
+        background-color: goldenrod;
+        border: solid 1px transparent;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 300;
+        cursor: pointer;
+        transition: all .1s ease-in-out;
+        
+}
