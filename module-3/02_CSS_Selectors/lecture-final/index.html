@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* universal selector */
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        /* element selector */
+        h1 {
+            background-color: brown;
+        }
+
+        /* use multiple selectors */
+        h1,
+        h2 {
+            border: 5px dashed black;
+        }
+
+        /* target by id */
+        #sub {
+            background-color: coral;
+        }
+
+        /* target by class */
+        .second-title {
+            background-color: cornflowerblue;
+        }
+
+        /* target elements that have a specific attribute */
+        input[required] {
+            background-color: cyan;
+        }
+
+        /* target elements that have an attribute with a specific value */
+        input[required='true'] {
+            background-color: darkblue;
+        }
+
+
+        .header.second-title {
+            background-color: darkred;
+        }
+
+        p {
+            background-color: darkolivegreen;
+        }
+
+        #tags p {
+            background-color: darkorange;
+        }
+
+        #tags>p {
+            background-color: darkorchid;
+        }
+
+        input:hover {
+            background-color: deeppink;
+        }
+
+        li:nth-child(even) {
+            background-color: deepskyblue;
+        }
+
+        li:hover:nth-child(even) {
+            background-color: firebrick;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="header">Hello World</h1>
+    <h2 id="sub">subtitle</h2>
+    <h1 class="second-title header">another world</h1>
+
+    <input type="text">
+    <input type="text" required="false">
+    <input type="text" required="true">
+
+    <p>zero line</p>
+
+    <div id="tags">
+        <p>first line</p>
+        <p>second line</p>
+        <div>
+            <p>third line</p>
+            <p>fourth line</p>
+        </div>
+    </div>
+
+    <ul>
+        <li class="product">one</li>
+        <li class="product">two</li>
+        <li class="product"> three</li>
+        <li class="product">one</li>
+        <li class="product">two</li>
+        <li class="product"> three</li>
+    </ul>
+
+    <ol>
+        <li class="product">one</li>
+        <li class="product">two</li>
+        <li class="product"> three</li>
+        <li class="product">one</li>
+        <li class="product">two</li>
+        <li class="product"> three</li>
+    </ol>
+
+
+</body>
+
+</html>
