@@ -15,3 +15,65 @@ ul {
   margin: 0;
   padding: 0;
 }
+aside {position: fixed;
+  border-right: 1px solid rgba(0, 173, 238, 0.4);
+  height:1000px ;
+  width: 200px;
+}
+aside >img {
+  width: 120px;
+  margin: 35px;
+}
+main {
+  
+  padding-left:220px;
+  padding-right: 20px;
+}
+nav > ul > li{
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom:1px solid rgba(0, 173, 238, 0.4);
+  padding-bottom: 12px;
+  padding-top:0px ;
+  width: 9rem;
+  margin: 1.2rem;
+  list-style: none;
+}
+nav > ul > li > a{
+  font-weight: bold;
+  color: #00ADEE;
+  text-decoration:none ;
+}
+nav > ul > li:first-child a {
+  text-decoration: underline;
+}
+header>img {
+  height: 100px;
+  padding-bottom: 10px;
+}
+#placeholder>img {
+  max-width: 100%;
+  height: auto;
+}
+section>div {
+  width: 33%;
+display: inline-block;
+padding-right: 20px;
+padding-top: 20px;
+}
+h2 {
+color: #8CC36F;
+
+}
+h2>i {
+  padding-right: 10px;
+}
+#what-we-do>p {
+  border-right: 1px solid rgba(170, 239, 135, 0.8);
+  height:200px ;
+
+}
+#our-work>p {
+  border-right: 1px solid rgba(170, 239, 135, 0.8);
+  height:200px ;
+}
