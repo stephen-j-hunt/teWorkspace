@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 3fr;
+            grid-template-rows: 10vh 80vh 10vh;
+            gap: 10px;
+            grid-template-areas:
+                "header     header      header"
+                "nav        content     content"
+                "footer     footer      footer"
+            ;
+        }
+
+        header {
+            background-color: aqua;
+            grid-area: header;
+        }
+
+        nav {
+            background-color: aquamarine;
+            grid-area: nav;
+        }
+
+        main {
+            background-color: blueviolet;
+            grid-area: content;
+        }
+
+        footer {
+            background-color: cadetblue;
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <Header>HEADER</Header>
+        <main>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum debitis quasi aut, similique molestiae
+            ratione
+            porro quod voluptas vitae odit doloremque ducimus molestias quibusdam, distinctio dolorem consequatur
+            voluptatibus non eaque.
+            <img src="" alt="">
+        </main>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+            </ul>
+        </nav>
+        <footer>
+            FOOTER
+        </footer>
+    </div>
+</body>
+
+</html>
