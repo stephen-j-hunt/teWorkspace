@@ -44,7 +44,7 @@ h6 {
             margin: 0 auto 0 auto;
            }
     
-img  {
+main img  {
     float: initial;
     width:400px;
     align-content: right;
@@ -54,7 +54,7 @@ img  {
         font-style: italic;
         text-decoration: white;
     }
-    links-section {
+    section#links-section > h2 {
         text-decoration: white;
         width:500px;
         text-align:center;
