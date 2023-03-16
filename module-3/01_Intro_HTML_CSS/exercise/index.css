@@ -17,6 +17,9 @@ h2 {
     font-size: 35px;
     text-decoration: white;
 }
+section#facts-section>h2{
+    text-decoration: underline;
+}
 h3 {
     color: gray;
     font-size: 28px;
@@ -54,8 +57,11 @@ main img  {
         font-style: italic;
         text-decoration: white;
     }
+    section#quotes-section>h2 {
+        text-decoration: underline;
+    }
     section#links-section > h2 {
-        text-decoration: white;
+        text-decoration:underline;
         width:500px;
         text-align:center;
     }
