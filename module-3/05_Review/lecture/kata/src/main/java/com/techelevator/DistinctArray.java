@@ -1,5 +1,11 @@
 package com.techelevator;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 class DistinctArray {
     /**
      * You are given an input array of integers. Write a function to remove any duplicate
@@ -29,12 +35,71 @@ class DistinctArray {
      */
 
     public int[] removeDuplicates(int[] input) {
+        if(input == null) {
+            return input;
+        }
+        Set<Integer> intSet = new HashSet<>();
+        for(int i =0; i < input.length; i++) {
+            intSet.add(input[i]);
+        }
 
-        throw new UnsupportedOperationException("This method is not yet implemented");
+        int[] arr = new int[intSet.size()];
+        int count = 0;
+        for(Integer num : intSet) {
+            arr[count] = num;
+            count++;
+        }
+
+        return arr;
+//        List<Integer> intList = new ArrayList<>();
+//        for (int i =0; i < input.length; i++) {
+//            if(intList.contains(input[i])){
+//                continue;
+//            } else {
+//                intList.add(input[i]);
+//            }
+//        }
+//        int[] intArr = new int[intList.size()];
+//        int count = 0;
+//        for(Integer num : intList) {
+//            intArr[count] = num;
+//            count++;
+//        }
+//        return intArr;
+
+
+
+
     }
+
+
+
+
+
+
 
     public int[] removeDuplicatesPreserveOrder(int[] input) {
 
-        throw new UnsupportedOperationException("This method is not yet implemented");
+        if(input == null) {
+            return input;
+        }
+        List<Integer> intList = new ArrayList<>();
+        for (int i =0; i < input.length; i++) {
+            if(intList.contains(input[i])){
+                continue;
+            } else {
+                intList.add(input[i]);
+            }
+        }
+        int[] intArr = new int[intList.size()];
+        int count = 0;
+        for(Integer num : intList) {
+            intArr[count] = num;
+            count++;
+        }
+        return intArr;
+
+    }
+
     }
 }

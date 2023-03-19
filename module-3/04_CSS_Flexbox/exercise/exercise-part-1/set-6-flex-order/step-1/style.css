@@ -9,10 +9,21 @@ body {
   padding: 20px;
   margin-bottom: 20px;
   border: solid 1px #555;
+  display: flex;
+  
+  
+  
 }
 
 .bio img {
   width: 150px;
   border-radius: 999px;
   margin: 0 10px;
+  display: flex;
+  
+  
+}
+img[src="img/philipe-cavalcante-xe68QiMaDrQ-unsplash.jpg"] {
+  display: flex;
+  order: 1;
 }

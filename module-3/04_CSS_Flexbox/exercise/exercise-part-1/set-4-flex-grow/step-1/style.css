@@ -6,6 +6,12 @@ body {
 
 .container {
   background-color: #F0F0F0;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  
+  
+  
 }
 
 .box {
@@ -15,6 +21,12 @@ body {
   color: #fff;
   text-align: center;
   border: solid 1px #777;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  
+  
+  
 }
 
 .box:nth-child(even) {

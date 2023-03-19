@@ -145,10 +145,10 @@ column-gap: 50px;
                     grid-template-columns: 1fr;
                     grid-template-rows: auto;
                      grid-template-areas: 
-                     "code   "       
-                     "web   "
-                     "database    "  
-                     "design     ";
+                     "code"       
+                     "web"
+                     "database"  
+                     "design";
                 
      }
 }
