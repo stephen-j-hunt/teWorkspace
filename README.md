@@ -310,15 +310,14 @@ The table below lists the Topics for each day as well as **_the Sections and Uni
         </tr>
         <tr class="review">
             <td>Day 5</td>
-            <td>Review</td>
-            <td></td>
+            <td>Intro to Vue.js</td>
+            <td>Intro to Tools - Vue<br/>Web Application Development - Intro to Vue.js</td>
         </tr>
         <!-- WEEK 11 -->
         <tr>
             <td rowspan="5">Week 11<br><small>Mar 27</small></td>
             <td>Day 1</td>
-            <td>Intro to Vue.js</td>
-            <td>Intro to Tools - Vue<br/>Web Application Development - Intro to Vue.js</td>
+            <td colspan="2">Mental Health Day</td>
         </tr>
         <tr>
             <td>Day 2</td>
