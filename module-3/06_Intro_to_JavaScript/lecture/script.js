@@ -1,7 +1,7 @@
 /*
     Example of a multi-line comment just like in C#/Java
 */
-
+console.log("hello again world");
 // Single line comment
 
 /**
