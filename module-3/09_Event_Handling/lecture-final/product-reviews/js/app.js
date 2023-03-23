@@ -160,4 +160,29 @@ function resetFormValues() {
 /**
  * Save the review that was added using the add review form.
  */
-function saveReview() { }
+function saveReview() {
+
+  // retrieve values from the form
+  const name = document.getElementById('name').value;
+  const title = document.getElementById('title').value;
+  const rating = document.getElementById('rating').value;
+  const review = document.getElementById('review').value;
+
+  // build the review object
+  const reviewObj = {
+    reviewer: name,
+    title: title,
+    review: review,
+    rating: rating
+  }
+
+  // show it to the user with DisplayReview()
+  displayReview(reviewObj);
+
+  // add to the review colleection
+  reviews.push(reviewObj);
+
+  // reset the form fields
+  resetFormValues();
+
+}
