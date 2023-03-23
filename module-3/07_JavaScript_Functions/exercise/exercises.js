@@ -19,7 +19,8 @@
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
-
+const isAdmitted = (gpa, satScore = 0, recommendation = false) => (gpa > 4.0 || satScore > 1300) ||
+    (satScore > 1300 || gpa > 3.0 && !recommendation) || (satScore > 1200 && !recommendation)
 /**
  * Write a function called useParameterToFilterArray that accepts a filter function
  * as a parameter. Use this function to filter unfilteredArray and return the result.
@@ -29,6 +30,8 @@
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
 
+const useParameterToFilterArray = (filterFunction) =>
+    unfilteredArray.filter(filterFunction);
 /**
  * Write a function called makeNumber that takes two strings
  * of digits, concatenates them together, and returns
@@ -41,6 +44,7 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {string} [second=''] the second string of digits to concatenate
  * @returns {number} the resultant number
  */
+
 
 /**
  * Write a function called addAll that takes an unknown number of parameters
@@ -67,25 +71,25 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  *     * state
  *     * zip
  *
- * getFullAddressesOfProperties returns an array of strings. 
- * Each string is a mailing address generated from the data of a single JavaScript object. 
- * 
+ * getFullAddressesOfProperties returns an array of strings.
+ * Each string is a mailing address generated from the data of a single JavaScript object.
+ *
  * Each mailing address should have the following format:
- *    
+ *
  *  streetNumber streetName streetType city state zip
  *
  * Use `map` and an anonymous function.
  */
 
-/** 
+/**
  * Write and document a function called findLargest that uses `forEach`
  * to find the largest element in an array.
  * The function must work for strings and numbers.
- * 
+ *
  * For strings, "largest" means the word coming last in lexographical order.
- * Lexographic is similar to alphabetical order except that 
- * capital letters come before lowercase letters: 
- * 
+ * Lexographic is similar to alphabetical order except that
+ * capital letters come before lowercase letters:
+ *
  * "cat" < "dog" but "Dog" < "cat"
  *
  * @param {number[]|string[]} searchArray the array to search
