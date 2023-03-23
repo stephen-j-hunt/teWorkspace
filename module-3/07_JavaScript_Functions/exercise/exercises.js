@@ -19,8 +19,8 @@
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
-const isAdmitted = (gpa, satScore = 0, recommendation = false) => (gpa > 4.0 || satScore > 1300) ||
-    (satScore > 1300 || gpa > 3.0 && !recommendation) || (satScore > 1200 && !recommendation)
+const isAdmitted = (gpa, satScore = 0, recommendation = false) => (gpa > 4.0 || satScore > 1300
+    || (gpa > 3.0 && recommendation) || (satScore > 1200 && recommendation));
 /**
  * Write a function called useParameterToFilterArray that accepts a filter function
  * as a parameter. Use this function to filter unfilteredArray and return the result.
@@ -44,7 +44,9 @@ const useParameterToFilterArray = (filterFunction) =>
  * @param {string} [second=''] the second string of digits to concatenate
  * @returns {number} the resultant number
  */
-
+const makeNumber = (first, second = '') => {
+    return parseInt(first + second);
+};
 
 /**
  * Write a function called addAll that takes an unknown number of parameters
@@ -53,13 +55,17 @@ const useParameterToFilterArray = (filterFunction) =>
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
-
+const addAll = (...number) => {
+    return number.reduce((accumulator, sum = 0) => sum + accumulator, 0)
+};
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
-
+const makeHappy = (words) => {
+    return words.map(x => 'Happy ' + x);
+}
 /*
  * Write and document a function called getFullAddressesOfProperties
  * that takes an array of JavaScript objects. Each object contains the
@@ -80,7 +86,9 @@ const useParameterToFilterArray = (filterFunction) =>
  *
  * Use `map` and an anonymous function.
  */
-
+const getFullAddressesOfProperties = (arr) => {
+    return arr.map((x) => x.streetNumber + ' ' + x.streetName + ' ' + x.streetType + ' ' + x.city + ' ' + x.state + ' ' + x.zip);
+};
 /**
  * Write and document a function called findLargest that uses `forEach`
  * to find the largest element in an array.
@@ -95,7 +103,11 @@ const useParameterToFilterArray = (filterFunction) =>
  * @param {number[]|string[]} searchArray the array to search
  * @returns {number|string} the number or string that is largest
  **/
-
+const findLargest = (searchArray) => {
+    let result = searchArray[0];
+    searchArray.forEach((x) => x > result ? result = x : result);
+    return result;
+}
 
 /*
  * CHALLENGE
@@ -114,3 +126,10 @@ const useParameterToFilterArray = (filterFunction) =>
  *
  * Read the tests to verify you have the correct behavior.
  */
+const getSumOfSubArrayValues = (arr) =>
+    arr.reduce((accumulator, value) => accumulator + value.reduce((a, b) => a + b, 0), 0);
+
+
+
+
+

@@ -5,7 +5,7 @@ let reviews = [
     reviewer: 'Malcolm Madwell',
     title: 'What a book!',
     review:
-    "It certainly is a book. I mean, I can see that. Pages kept together with glue and there's writing on it, in some language. Yes indeed, it is a book!",
+      "It certainly is a book. I mean, I can see that. Pages kept together with glue and there's writing on it, in some language. Yes indeed, it is a book!",
     rating: 3
   }
 ];
@@ -58,13 +58,49 @@ function displayReview(review) {
 }
 
 // LECTURE STARTS HERE ---------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  // Set the product reviews page title.
+  setPageTitle();
+  // Set the product reviews page description.
+  setPageDescription();
+  // Display all of the product reviews on our page.
+  displayReviews();
 
-// Set the product reviews page title.
-setPageTitle();
-// Set the product reviews page description.
-setPageDescription();
-// Display all of the product reviews on our page.
-displayReviews();
+  setupDescEdit();
+  //give the ability to hit enter and save whats in the textbox or escape to undp changes to the box
+  const addReviewButton = document.getElementById('btnToggleForm');
+  addReviewButton.addEventListener('click', showHideForm);
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();//this stops the page from auto reloading by default 
+    saveReview();
+    showHideForm();
+  })
+
+});
+//this made the add reveiew button have function open and add review and save it
+
+
+
+function setupDescEdit() {
+  const descElement = document.querySelector('p.description');
+  descElement.addEventListener('click', (event) => toggleDescriptionEdit(event.target));
+
+  const descInput = document.getElementById('inputDesc');
+  descInput.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      exitDescriptionEdit(event.target, true);//event.target is a reference to the textbox
+    }
+    if (event.key === 'Escape') {
+      exitDescriptionEdit(event.target, false);
+    }
+  });
+
+}
+// above code add listener for the input box 
+
+
 
 /**
  * Hide the description and show the text box.
@@ -76,7 +112,7 @@ function toggleDescriptionEdit(desc) {
   textBox.value = desc.innerText;
   textBox.classList.remove('d-none');
   desc.classList.add('d-none');
-  textBox.focus();
+  textBox.focus();//focus is used to move the cursor
 }
 
 /**
@@ -125,8 +161,27 @@ function resetFormValues() {
   document.getElementById('rating').value = 1;
   document.getElementById('review').value = '';
 }
-
+//this clears out all elements on the form
 /**
  * Save the review that was added using the add review form.
  */
-function saveReview() {}
+function saveReview() {
+
+
+  const name = document.getElementById('name').value;
+  const title = document.getElementById('title').value;
+  const rating = document.getElementById('rating').value;
+  const review = document.getElementById('review').value;
+
+  const reviewObj = {
+    reviewer: name,
+    title: title,
+    review: review,
+    rating: rating
+  }
+
+  displayReview(reviewObj);
+  reviews.push(reviewObj);
+  resetFormValues();
+
+}
