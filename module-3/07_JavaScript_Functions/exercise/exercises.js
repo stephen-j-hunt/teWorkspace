@@ -126,8 +126,10 @@ const findLargest = (searchArray) => {
  *
  * Read the tests to verify you have the correct behavior.
  */
-const getSumOfSubArrayValues = (arr) =>
-    arr.reduce((accumulator, value) => accumulator + value.reduce((a, b) => a + b, 0), 0);
+const getSumOfSubArrayValues = (arr = []) =>
+    arr.length
+        ? arr.reduce((accumulator, value) => accumulator + value.reduce((a, b) => a + b, 0), 0)
+        : 0;
 
 
 
