@@ -33,13 +33,13 @@ describe('Event Handling Calculator Exercise Tests', () => {
   });
 
   it('should clear the display back to 0 when clicking the button AC', () => {
-    cy.get('#display').clear({force: true}).type('23', {force: true}); // set initial value to test that it's cleared, force necessary because field is disabled
+    cy.get('#display').clear({ force: true }).type('23', { force: true }); // set initial value to test that it's cleared, force necessary because field is disabled
     clickClear();
     cy.get('#display').should('have.value', '0');
   });
 
-  it('should be able to subtract 9-6 and get a result of 3',() => {
-    cy.get('#display').clear({force: true}).type('0', {force: true}); // reset if previous test fails
+  it('should be able to subtract 9-6 and get a result of 3', () => {
+    cy.get('#display').clear({ force: true }).type('0', { force: true }); // reset if previous test fails
     clickNumber(9)
     clickOperator('-')
     clickNumber(6)

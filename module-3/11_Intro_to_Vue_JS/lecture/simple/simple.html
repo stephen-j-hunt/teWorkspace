@@ -6,18 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simple event handle</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 
 <body>
-    <h2 id="copy"></h2>
-    <input type="text" id="source">
-
+    <div id='app'>
+        <h2 id="copy">{{message}}</h2>
+        <input type="text" id="source" v-model="message">
+    </div>
     <script>
-        const source = document.getElementById('source');
-        const copy = document.getElementById('copy');
-        source.addEventListener('keyup', () => {
-            copy.innerText = source.value;
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: ""
+            }
         })
+
+
+
+        // const source = document.getElementById('source');
+        // const copy = document.getElementById('copy');
+        // source.addEventListener('keyup', () => {
+        //     copy.innerText = source.value;
+        // })
     </script>
 
 </body>
