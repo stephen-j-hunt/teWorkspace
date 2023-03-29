@@ -331,7 +331,8 @@ The table below lists the Topics for each day as well as **_the Sections and Uni
         <tr>
             <td>Day 4</td>
             <td>Vue component communication</td>
-            <td>Web Application Development - Vue component communication</td>
+            <td>Web Application Development - Vue component communication<br/>
+            <a href="https://youtu.be/_2_C9j-8CtM">Vuex: Intro Tutorial</a></td>
         </tr>
         <tr>
             <td>Day 5</td>
