@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple event handle</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2 id="copy">{{message}}</h2>
+        <h3>{{message}}</h3>
+        <input type="text" id="source" v-model="message">
+        <div>
+            <button @click="increase()">Increase</button>
+            <h3>{{'the value is ' + counter}}</h3>
+            <button v-on:click="counter--">Decrease</button>
+        </div>
+    </div>
+
+    <script>
+
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: "",
+                counter: 1
+            },
+            methods: {
+                increase() {
+                    this.counter++;
+                }
+            }
+        })
+
+        // const source = document.getElementById('source');
+        // const copy = document.getElementById('copy');
+        // source.addEventListener('keyup', () => {
+        //     copy.innerText = source.value;
+        // })
+    </script>
+
+</body>
+
+</html>
