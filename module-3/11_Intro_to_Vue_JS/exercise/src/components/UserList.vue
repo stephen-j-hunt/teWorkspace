@@ -12,40 +12,43 @@
     <tbody>
       <tr>
         <td>
-          <input v-model="search.firstName" type="text" id="firstNameFilter" />
+          <input type="text" id="firstNameFilter" v-model="search.firstName" />
         </td>
         <td>
-          <input v-model="search.lastName" type="text" id="lastNameFilter" />
+          <input type="text" id="lastNameFilter" v-model="search.lastName" />
         </td>
         <td>
-          <input v-model="search.username" type="text" id="usernameFilter" />
+          <input type="text" id="usernameFilter" v-model="search.username" />
         </td>
         <td>
-          <input v-model="search.emailAddress" type="text" id="emailFilter" />
+          <input type="text" id="emailFilter" v-model="search.emailAddress" />
         </td>
         <td>
-          <select id="statusFilter">
+          <select id="statusFilter" v-model="search.status">
             <option value="">Show All</option>
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
           </select>
         </td>
       </tr>
-      <!-- user listing goes here -->
-      <tr>
-        <td v-for="user in users" v-bind:key="user.firstName">
+      <tr
+        v-for="user in filteredList"
+        v-bind:class="{ inactive: user.status === 'Inactive' }"
+        v-bind:key="user.firstName"
+      >
+        <td>
           {{ user.firstName }}
         </td>
-        <td v-for="user in users" v-bind:key="user.lastName">
+        <td>
           {{ user.lastName }}
         </td>
-        <td v-for="user in users" v-bind:key="user.username">
+        <td>
           {{ user.username }}
         </td>
-        <td v-for="user in users" v-bind:key="user.emailAddress">
+        <td>
           {{ user.emailAddress }}
         </td>
-        <td v-for="user in users" v-bind:key="user.status">
+        <td>
           {{ user.status }}
         </td>
       </tr>
@@ -53,21 +56,8 @@
   </table>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      search: {
-        firstName: "",
-        lastName: "",
-        username: "",
-        emailAddress: "",
-        status: "",
-      },
-    };
-  },
-};
-</script>
+
+
 <script>
 export default {
   name: "user-list",
@@ -117,7 +107,37 @@ export default {
           status: "Inactive",
         },
       ],
+      search: {
+        firstName: "",
+
+        lastName: "",
+
+        username: "",
+
+        emailAddress: "",
+
+        status: "",
+      },
     };
+  },
+  computed: {
+    filteredList() {
+      return this.users.filter((user) => {
+        return (
+          user.firstName
+            .toLowerCase()
+            .includes(this.search.firstName.toLowerCase()) &&
+          user.lastName
+            .toLowerCase()
+            .includes(this.search.lastName.toLowerCase()) &&
+          user.username
+            .toLowerCase()
+            .includes(this.search.username.toLowerCase()) &&
+          user.emailAddress.toLowerCase().includes(this.search.emailAddress) &&
+          user.status.includes(this.search.status)
+        );
+      });
+    },
   },
 };
 </script>
