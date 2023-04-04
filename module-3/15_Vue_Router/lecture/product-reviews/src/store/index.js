@@ -83,15 +83,15 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    ADD_REVIEW(state,review) {
-      const product = this.state.products.find(p => p.id == review.productID);
+    ADD_REVIEW(state, review) {
+      const product = state.products.find(p => p.id == review.productID);
 
       // Get the next review id. Normally, a database would assign a unique id for the review.
       // This code simulates that since there's no database in this example.
 
       let maxID = product.id * 1000;
       // Use the reduce() array function to find the highest review.id currently in the array
-      maxID = product.reviews.reduce( (maxID, review) => {
+      maxID = product.reviews.reduce((maxID, review) => {
         return Math.max(maxID, review.id);
       }, maxID);
       // Set the new id
@@ -103,7 +103,7 @@ export default new Vuex.Store({
       state.filter = filter;
     },
     FLIP_FAVORITED(state, reviewToChange) {
-      reviewToChange.favorited = ! reviewToChange.favorited;
+      reviewToChange.favorited = !reviewToChange.favorited;
     },
     SET_ACTIVE_PRODUCT(state, productID) {
       state.activeProduct = productID;

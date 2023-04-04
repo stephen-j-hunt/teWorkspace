@@ -1,7 +1,7 @@
 <template>
   <div class="well">
     <span class="amount" v-on:click="updateFilter()">{{ stars }}</span>
-    {{ rating }} Star Review{{ stars === 1 ? '' : 's' }}
+    {{ rating }} Star Review{{ stars === 1 ? "" : "s" }}
   </div>
 </template>
 
@@ -12,15 +12,15 @@ export default {
   methods: {
     updateFilter() {
       this.$store.commit("UPDATE_FILTER", parseInt(this.rating));
-    }
+    },
   },
   computed: {
     stars() {
-      const reviews = this.$store.getters.products.reviews;
+      const reviews = this.$store.getters.product.reviews;
       return reviews.reduce((currentCount, review) => {
         return currentCount + (review.rating === parseInt(this.rating) ? 1 : 0);
       }, 0);
-    }
-  }
+    },
+  },
 };
 </script>

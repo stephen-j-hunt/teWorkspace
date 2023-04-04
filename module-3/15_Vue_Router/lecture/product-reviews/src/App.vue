@@ -1,5 +1,9 @@
 <template>
-  <div></div>
+  <div>
+    <h3>render below</h3>
+    <router-view />
+    <h3>render above</h3>
+  </div>
 </template>
 
 <script>
