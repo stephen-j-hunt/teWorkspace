@@ -5,11 +5,17 @@
   </div>
 </template>
 
+<div class="loading" v-if="isLoading">
+        <img src="../assets/ping_pong_loader.gif" />
+      </div>
 <script>
 import boardService from "../services/BoardService";
-
+import CommentsList from "../components/CommentsList.vue";
 export default {
   name: "card-detail",
+  components: {
+    CommentsList,
+  },
   data() {
     return {
       card: {
